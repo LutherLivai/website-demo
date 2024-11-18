@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Contact - HyRawa Advertising Solution</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/logohyrawa.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Mentor
+  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+<!-- Custom JS -->
+<script>
+  // Toggle between the two forms
+  const toggleFormBtn = document.getElementById('toggleFormBtn');
+  const advertisingForm = document.getElementById('advertisingForm');
+  const contactForm = document.getElementById('contactForm');
+
+  let isContactForm = false;  // Start with Advertising form
+
+  toggleFormBtn.addEventListener('click', function () {
+      isContactForm = !isContactForm;
+      if (isContactForm) {
+          contactForm.style.display = 'block';
+          advertisingForm.style.display = 'none';
+          toggleFormBtn.textContent = 'Switch to Advertising Form';
+      } else {
+          contactForm.style.display = 'none';
+          advertisingForm.style.display = 'block';
+          toggleFormBtn.textContent = 'Switch to Contact Form';
+      }
+  });
+
+  // Form Validation on Submit
+  const agencyForm = document.getElementById('agencyForm');
+  const contactFormData = document.getElementById('contactFormData');
+
+  // Agency Form Validation
+  agencyForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const name = document.getElementById('agencyName').value;
+      const email = document.getElementById('contactEmail').value;
+      const message = document.getElementById('message').value;
+      const budget = document.getElementById('budget').value;
+
+      if (!name || !email || !message || !budget) {
+          alert('Please fill in all fields for the Agency Inquiry.');
+      } else {
+          alert('Agency Inquiry submitted successfully!');
+          agencyForm.reset();
+      }
+  });
+
+  // Contact Form Validation
+  contactFormData.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const contactName = document.getElementById('contactName').value;
+      const phone = document.getElementById('contactPhone').value;
+      const contactMessage = document.getElementById('contactMessage').value;
+
+      if (!contactName || !phone || !contactMessage) {
+          alert('Please fill in all fields for the Contact Form.');
+      } else {
+          alert('Contact Form submitted successfully!');
+          contactFormData.reset();
+      }
+  });
+</script>
+<style>
+  .form-container {
+      margin-top: 50px;
+  }
+  .form-container h2 {
+      margin-bottom: 20px;
+  }
+  .contact-info {
+      margin-top: 40px;
+  }
+  .social-icons i {
+      font-size: 2rem;
+      margin-right: 10px;
+  }
+</style>
+
+<style>
+  /* Custom styling for logo */
+  .logo img {
+      max-height: 600px; /* Resize logo image height */
+      width: auto; /* Maintain aspect ratio */
+  }
+
+  .logo h3.sitename {
+      margin-left: 10px; /* Space between logo image and text */
+      font-size: 1.5rem; /* Adjust font size of site name */
+      font-weight: bold;
+      color: #333; /* Adjust text color */
+  }
+
+  /* Ensure the navbar items are aligned properly */
+  .navbar-nav {
+      margin-left: auto;  /* Align nav items to the right */
+  }
+
+  @media (max-width: 767px) {
+      .logo img {
+          max-height: 40px; /* Reduce logo size for smaller screens */
+      }
+
+      .logo h3.sitename {
+          font-size: 1.2rem; /* Smaller font size for small screens */
+      }
+  }
+</style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto size">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <h3><img src="assets/img/logohyrawa.png" style="height: max-content;" alt=""></h3>
+        <h3 class="sitename">HyRawa Advertisting Solution</h3>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home<br></a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="advertisting_stratgacy.html">Advertising Strategy</a></li>
+              <li><a class="dropdown-item" href="#">Creative Services</a></li>
+              <li><a class="dropdown-item" href="#">Media Planning & Buying</a></li>
+              <li><a class="dropdown-item" href="#">Digital Advertising</a></li>
+              <li><a class="dropdown-item" href="#">SEO & Content Marketing</a></li>
+              <li><a class="dropdown-item" href="#">Public Relations</a></li>
+              <li><a class="dropdown-item" href="#">Influencer Marketing</a></li>
+              <li><a class="dropdown-item" href="#">Branding & Identity</a></li>
+            </ul>
+          </li>
+          <li><a href="portifilo.html">Portifilo</a></li>
+          <li><a href="booking.html">Booking</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+
+    <div class="container form-container my-1 border bg-info">
+      <div class="row">
+          <div class="col-md-12 text-center">
+              <h2>Advertising Agency & Contact Form</h2>
+              <div class="form-group">
+                  <button class="btn btn-primary" id="toggleFormBtn">Switch to Contact Form</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Advertising Agency Form -->
+      <div id="advertisingForm" class="form-group">
+          <h3>HyCee Advertising Solution</h3>
+          <form id="agencyForm">
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="agencyName">HyCee Advertising Solution</label>
+                          <input type="text" class="form-control" id="agencyName" placeholder="Enter agency name" required>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="contactEmail">Contact Email</label>
+                          <input type="email" class="form-control" id="contactEmail" placeholder="Enter email" required>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea class="form-control" id="message" rows="4" placeholder="Describe your requirements" required></textarea>
+              </div>
+              <div class="form-group">
+                  <label for="budget">Advertising Budget</label>
+                  <input type="number" class="form-control" id="budget" placeholder="Enter your budget" required>
+              </div>
+              <button type="submit" class="btn btn-success">Submit Agency Form</button>
+          </form>
+      </div>
+
+      <!-- Contact Form -->
+      <div id="contactForm" class="form-group" style="display:none;">
+          <h3>Contact Us</h3>
+          <form id="contactFormData">
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="contactName">Your Name</label>
+                          <input type="text" class="form-control" id="contactName" placeholder="Enter your name" required>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="contactPhone">Phone Number</label>
+                          <input type="tel" class="form-control" id="contactPhone" placeholder="Enter your phone number" required>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="contactMessage">Message</label>
+                  <textarea class="form-control" id="contactMessage" rows="4" placeholder="Your message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-success">Submit Contact Form</button>
+          </form>
+      </div>
+
+      <!-- Contact Information Section in Table Format -->
+      <div class="contact-info">
+          <h4>Contact Information for XYZ Advertising Agency</h4>
+          <p>If you need assistance or have any questions, feel free to reach out to us through the following contact details:</p>
+
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th scope="col">Information</th>
+                      <th scope="col">Details</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td><i class="fas fa-map-marker-alt"></i> Office Location</td>
+                      <td>1234 Marketing Blvd, Suite 101<br>Cityville, XY 12345</td>
+                  </tr>
+                  <tr>
+                      <td><i class="fas fa-phone-alt"></i> Phone Number</td>
+                      <td>
+                          <strong>+1 (555) 123-4567</strong><br>
+                          <strong>+1 (555) 987-6543 (24/7 Support)</strong>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td><i class="fas fa-envelope"></i> Email</td>
+                      <td>
+                          <p>info@xyzagency.com</p>
+                          <p>support@xyzagency.com (For urgent support)</p>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td><i class="fas fa-globe"></i> Website</td>
+                      <td><a href="https://www.xyzagency.com" target="_blank">www.xyzagency.com</a></td>
+                  </tr>
+              </tbody>
+          </table>
+
+  </section>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container">
+      <div class="row">
+        <!-- Company Information -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-warning">About Us</h5>
+          <p>The HyRawa is a full-service advertising agency helping businesses craft powerful messages and connect with their audiences. Our team of creatives, strategists, and marketers are dedicated to bringing your vision to life.</p>
+        </div>
+
+        <!-- Services -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-warning">Our Services</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">Brand Strategy</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Social Media Marketing</a></li>
+            <li><a href="#">Search Engine Optimization (SEO)</a></li>
+            <li><a href="#">Paid Advertising (PPC)</a></li>
+            <li><a href="#">Creative Design</a></li>
+            <li><a href="#">Website Development</a></li>
+            <li><a href="#">Content Marketing</a></li>
+            <li><a href="#">Public Relations</a></li>
+            <li><a href="#">Video Production</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Location -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-warning">Contact Information</h5>
+          <ul class="list-unstyled contact-info">
+            <li><i class="bi bi-telephone"></i> (+675) 74005048</li>
+            <li><i class="bi bi-envelope"></i> info@HyRawaadvertising.com</li>
+            <li><i class="bi bi-house-door"></i>Est Boroko, Port Moresby, NCDC, PNG</li>
+          </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-warning">Follow Us</h5>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <p>&copy; 2024 HyRawa Advertising Agency. All Rights Reserved.</p>
+          <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+          <p class="text-danger">&copy; Consultant Website Design by Pacific Welfare Alliances Tech Solution Consultant</p>
+        </div>
+      </div>
+    </div>
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      .hero-section {
+        height: 100vh;
+        background: url('assets/img/startupagency.png') no-repeat center center;
+        background-size: cover;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .service-icon {
+        font-size: 40px;
+        margin-bottom: 20px;
+        color: #007bff;
+      }
+      .service-card {
+        transition: transform 0.3s ease;
+      }
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+      .footer {
+        background-color: #343a40;
+        color: white;
+        padding: 20px 0;
+      }
+      .footer .social-icons a {
+        color: white;
+        margin: 0 10px;
+        font-size: 24px;
+        text-decoration: none;
+      }
+    </style>
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Preloader -->
+<div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
